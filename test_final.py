@@ -8,13 +8,13 @@ Begin with a test to make sure the appropriate characters are in the string
 #give erros if the parameters are not met
 read = "ATTTGGATT"
 k = 9  
-
+#must only contain A, T, C G:
 import re
 import sys
 if not re.match("^[c('A','C','T','G')]*$", read):
     print("Error: character not recognized")
     sys.exit()
-    
+#make sure k fits in the sequence:    
 if k > len(read):
     print("Error: k is longer than read length")
     sys.exit()
@@ -23,7 +23,7 @@ if k > len(read):
 '''
 Test the function that outputs the observed kmers 
 '''
-#use the assert function to test of the condition will return as "true"
+#use the assert function to test if the condition will return as "true"
 read = "ATTTGGATT"
 k = 9  
 
