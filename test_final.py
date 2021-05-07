@@ -23,7 +23,7 @@ if k > len(read):
 '''
 Test the function that outputs the observed kmers 
 '''
-
+#use the assert function to test of the condition will return as "true"
 read = "ATTTGGATT"
 k = 9  
 
@@ -61,11 +61,11 @@ def test_create_pandas_df()
   create_panda(read).eq(expected_result) 
   
   '''
-  Test the function to calculate total linguistic complexity 
+  Test the function to calculate linguistic complexity 
   '''
 
 def test_calculate_LC():
-  actual_result = calculate_LC(read) #call on the function from exam4.py
+  actual_result = calculate_LC(read) 
   expected_result = 0.875
   assert actual_result == expected_result 
  
