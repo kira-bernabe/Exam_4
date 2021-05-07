@@ -11,6 +11,16 @@ import pandas as pd
 
 import argparse
 
+#start with this function in order to get the read variable that will be necessary later
+
+if __name__ == '__main__':
+  parser = argparse.ArgumentParser()
+  parser.add_argument('-read') #put the read value here when the program is run
+  parser.add_argument('-k') #put the k value here  
+  args = parser.parse_args() 
+  read = args.read #read value comes from what the user enters
+  k = int(args.k) #k value is converted to an integer from what the user enters
+
 #Q1: define a function to count kmers of size k, where k is specified as an argument
 #first for observed kmers:
 '''
@@ -41,13 +51,13 @@ def count_kmers_possible(read, k):
   num_kmers3 = max(num_kmers,0) #so that k won't have negative value
   return(num_kmers3)
 
-#Q2 define a function to create a pandas data frame containing all possible k
+#Q2 define a function to create a pandas data frame containing all possible k's
 #and the associated number of observed and expected kmers
 '''
 Function to create a data frame using pandas to that contains all possible k's and the associated number of observed and expected kmers
 '''
 
-#need a loop to go through each k and as the dataframe is being built:
+#need a loop to go through each k as the dataframe is being built:
 def create_pandas(read):
   k_values = [] #first column is number of k's, make an empty list to append to
   for i in range(1,len(read)+1): #loops through the length of the read, since len() doesn't include the last number in the range, add 1
@@ -110,13 +120,6 @@ if __name__ == '__main__':
   main()
 
 
-if __name__ == '__main__':
-  parser = argparse.ArgumentParser()
-  parser.add_argument('-read') #put the read value here when the proram is run
-  parser.add_argument('-k') #put the k value here  
-  args = parser.parse_args() 
-  read = args.read #read value comes from what the user enters
-  k = int(args.k) #k value is converted to an integer from what the user enters
 
 
 
