@@ -13,6 +13,9 @@ import argparse
 
 #Q1: define a function to count kmers of size k, where k is specified as an argument
 #first for observed kmers:
+'''
+Function to specify k as an argument. Count the kmers of size k, first for the observed kmers
+'''
 
 def count_kmers_observed(read, k):
     counts = {} #this needs to be empty in order to start bulding the dictionary
@@ -26,6 +29,9 @@ def count_kmers_observed(read, k):
   
 #second function for possible kmers
 #because we only have 4 characters, the number of possible kmers is 4^k
+'''
+Count the kmers of size k for possible kmers
+'''
 
 def count_kmers_possible(read, k):
   num_kmers = {} #empty dictionary: start from nothing and add
@@ -37,6 +43,9 @@ def count_kmers_possible(read, k):
 
 #Q2 define a function to create a pandas data frame containing all possible k
 #and the associated number of observed and expected kmers
+'''
+Function to create a data frame using pandas to that contains all possible k's and the associated number of observed and expected kmers
+'''
 
 #need a loop to go through each k and as the dataframe is being built:
 def create_pandas(read):
@@ -58,6 +67,10 @@ def create_pandas(read):
 #linguistic complexity = o/p
 #take totals from df and use them to calculate the LC
 #start with the loop and the dataframe and then assign variables to observed and possible (x and y respectively)
+'''
+Function to calculate linguistic complexity of the string
+'''
+
 def calculate_LC(read):
   k_values = [] 
   for i in range(1,len(read)+1): 
