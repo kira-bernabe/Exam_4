@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from final import *
+
 #Q6 Write a script to thoroughly test each of your functions
 
 '''
