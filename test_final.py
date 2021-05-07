@@ -5,19 +5,17 @@
 '''
 Begin with a test to make sure the appropriate characters are in the string
 '''
-
+#give erros if the parameters are not met
 read = "ATTTGGATT"
 k = 9  
 
 import re
 import sys
 if not re.match("^[c('A','C','T','G')]*$", read):
-      #if the read doesn't contain these characters, show an error
     print("Error: character not recognized")
     sys.exit()
     
 if k > len(read):
-  #give error if k is longer than the read length
     print("Error: k is longer than read length")
     sys.exit()
     
@@ -50,7 +48,7 @@ def test_count_kmers_possible()
 Test to comnpare the data frame that was created with pandas to the original table in the assignment
 '''
 
-#cannot use assert function, must use eq.
+#cannot use assert function for data frames, must use .eq to compare tables 
 
 read = "ATTTGGATT"
 k = 9  
